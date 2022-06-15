@@ -3,7 +3,7 @@
         //delay sometimes need if more data fetching from the server
         await new Promise(resolve => setTimeout(resolve,1000))
         const id = params.id
-        const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
+        const res = await fetch(`http://127.0.0.1:8000/posts/${id}.json`)
         const guide = await res.json()
         console.log(guide)
     

@@ -1,10 +1,10 @@
 <script context='module'>
 export async function load({fetch}){
-   const res = await fetch('https://jsonplaceholder.typicode.com/posts')
-   const guides = await res.json()
+   const response = await fetch('http://127.0.0.1:8000/posts.json')
+   const guides = await response.json()
    console.log(guides)
 
-   if (res.ok){
+   if (response.ok){
        return{
            props:{
                guides
@@ -12,7 +12,7 @@ export async function load({fetch}){
        }
    }
    return{
-       status: res.status,
+       status: response.status,
        error: new Error('Could not fetch the guieds')
    }
 }
